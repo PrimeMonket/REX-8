@@ -65,6 +65,10 @@ public:
         }
     }
 
+    void memory_out_of_range() {
+        throw std::out_of_range("Memory arg2ess out of range");
+    }
+
     void execute() {
 
         //displays the bytres of the load program good for cheking for corrupt programs
@@ -373,11 +377,6 @@ private:
         }
     }
 };
-
-void memory_out_of_range() {
-    throw std::out_of_range("Memory arg2ess out of range");
-}
-
 
 std::vector<uint8_t> loadProgramFromFile(const std::string& filename) {
     std::ifstream file(filename, std::ios::binary);
